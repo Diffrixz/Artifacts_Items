@@ -1,4 +1,4 @@
-package net.Leease.fauxmod;
+package net.Leease.leasemod;
 
 import org.slf4j.Logger;
 
