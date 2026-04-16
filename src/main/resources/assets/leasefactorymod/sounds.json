@@ -1,0 +1,11 @@
+{
+  "item.bloodward_slash": {
+    "sounds": [
+      {
+        "name": "leasefactorymod:item/bloodward_slash",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  }
+}
