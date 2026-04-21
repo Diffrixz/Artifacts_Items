@@ -19,7 +19,7 @@ public class WaterShieldEventHandler {
         if (!(event.getRayTraceResult() instanceof EntityHitResult hitResult)) return;
         if (!(hitResult.getEntity() instanceof Player player)) return;
 
-        boolean bootsShield = ZephyrBootsItem.hasBootsShield(player.getUUID());
+        boolean bootsShield = ZephyrBootsItem.isShieldActive(player.getUUID(), player.level().getGameTime());
         boolean waterShield = ElementalEffects.hasWaterShield(
                 player.getUUID(), player.level().getGameTime());
 

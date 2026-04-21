@@ -23,5 +23,10 @@ public class ModNetwork {
                 BookUsePacket.CODEC,
                 BookUsePacket::handle
         );
+        registrar.playToServer(
+                ZephyrShieldPacket.TYPE,
+                ZephyrShieldPacket.CODEC,
+                ZephyrShieldPacket::handle
+        );
     }
 }

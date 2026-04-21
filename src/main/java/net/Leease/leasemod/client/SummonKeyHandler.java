@@ -19,9 +19,9 @@ public class SummonKeyHandler {
 
         if (player == null || mc.level == null) return;
 
-        // verifie que la touche summon est appuyer
+        // ça verifie que la touche summon est appuyer
         if (ClientEvents.SUMMON_KEY.consumeClick()) {
-            // verifie que le joueur a la couronne dans son slot artefact
+            // ça erifie que le joueur a la couronne dans son slot artefact
 
             // pour l'instant je verifie juste l'inventaire
             boolean hasCrown = player.getInventory().items.stream()
@@ -31,6 +31,18 @@ public class SummonKeyHandler {
                 // envoie un packet au serveur pour invoquer
                 // je vais faire les packets apres feignon en gros ça envoie le packé de oe gros spawn les mobs
                 net.neoforged.neoforge.network.PacketDistributor.sendToServer(new net.Leease.leasemod.network.SummonPacket());            }
+        }
+        // ça verifie que la touche de l'infini est appuyée
+        if (ClientEvents.ZEPHYR_KEY.consumeClick()) {
+            // ça verifie que le joueur a les bottes de zephyr sur ses iepds humm les iepds
+            boolean hasBoots = player.getItemBySlot(
+                            net.minecraft.world.entity.EquipmentSlot.FEET)
+                    .is(ModItems.ZEPHYR.get());
+
+            if (hasBoots) {
+                net.neoforged.neoforge.network.PacketDistributor.sendToServer(
+                        new net.Leease.leasemod.network.ZephyrShieldPacket());
+            }
         }
     }
 }

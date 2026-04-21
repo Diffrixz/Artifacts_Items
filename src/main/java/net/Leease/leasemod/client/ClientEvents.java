@@ -44,5 +44,11 @@ public class ClientEvents {
     public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
         event.register(SUMMON_KEY);
         event.register(BOOK_KEY);
+        event.register(ZEPHYR_KEY);
     }
+    public static final KeyMapping ZEPHYR_KEY = new KeyMapping(
+            "key.leasefactorymod.zephyr",
+            org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,
+            "key.categories.leasefactorymod"
+    );
 }

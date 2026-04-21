@@ -12,9 +12,7 @@ import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 //l'item d'astrah
 
@@ -68,8 +66,21 @@ public class ZephyrBootsItem extends ArmorItem {
 
         }
     }
+    private static final Map<UUID, Long> shieldUntil = new HashMap<>();
+    private static final long SHIELD_DURATION = 5400L; // 4min30
+
+    public static void activateShield(UUID uuid, long currentTick) {
+        shieldUntil.put(uuid, currentTick + SHIELD_DURATION);
+    }
+
     public static boolean hasBootsShield(UUID uuid) {
-        return playersWithBoots.contains(uuid);
+        // je garde hasBootsShield mais maintenant il verifie le temp
+        // au lieu d'être passif permanent
+        return false; // sera mis à jour avec le tick
+    }
+
+    public static boolean isShieldActive(UUID uuid, long currentTick) {
+        return currentTick < shieldUntil.getOrDefault(uuid, 0L);
     }
 }
 

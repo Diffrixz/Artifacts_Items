@@ -3,9 +3,10 @@
   "effect.leasefactorymod.bleeding": "Bleeding",
   "item.leasefactorymod.zephyr": "Zephyr",
   "item.leasefactorymod.sayaka_katana": "Sayaka's Katana",
-  "item.leasefactorymod.crown": "Technique des Dix Ombres",
-  "key.leasefactorymod.summon": "Summon",
+  "item.leasefactorymod.crown": "Connecteur des Dix Ombres",
+  "key.leasefactorymod.summon": "Chatelet",
   "key.categories.leasefactorymod": "Leease Factory Mods",
   "item.leasefactorymod.book_of_the_world": "Book of the World",
-  "key.leasefactorymod.book": "Book"
+  "key.leasefactorymod.book": "Livre Du Monde",
+  "key.leasefactorymod.zephyr": "L'Infini"
 }
