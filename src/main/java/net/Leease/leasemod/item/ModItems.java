@@ -24,6 +24,10 @@ public class ModItems {
     public static final DeferredItem<CrownItem> CROWN = ITEMS.register("crown",
             CrownItem::new);
 
+    //c'est l'item a fafa le livre
+    public static final DeferredItem<ElementalBookItem> ELEMENTAL_BOOK = ITEMS.register("book_of_the_world",
+            ElementalBookItem::new);
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

@@ -12,11 +12,18 @@ import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
 //l'item d'astrah
 
 public class ZephyrBootsItem extends ArmorItem {
 
+    private static final Set<UUID> playersWithBoots = new HashSet<>();
+
     public ZephyrBootsItem() {
+
         super(ArmorMaterials.NETHERITE, Type.BOOTS, new Properties());
     }
 
@@ -25,6 +32,8 @@ public class ZephyrBootsItem extends ArmorItem {
 
         if (entity instanceof Player player && player.getItemBySlot(EquipmentSlot.FEET).equals(stack)) {
 
+
+            playersWithBoots.add(player.getUUID());
             // l'effet de speed
 
             if (!player.hasEffect(MobEffects.MOVEMENT_SPEED)) {
@@ -38,6 +47,7 @@ public class ZephyrBootsItem extends ArmorItem {
             player.getAttribute(Attributes.STEP_HEIGHT)
                     .setBaseValue(1.5);
 
+
             // les particules quand il marche sur les bottes humm les pids a astra
 
             if (level.isClientSide && player.onGround() && player.getDeltaMovement().horizontalDistanceSqr() > 0.01) {
@@ -49,12 +59,17 @@ public class ZephyrBootsItem extends ArmorItem {
             }
         }
 
-        // c'est ça qui remet le stepheight normal si les bottes sont pas equipe sinn ça reste a jamais
+        // c'est ça qui remet le stepheight normal et l'infini si les bottes sont pas equipe sinn ça reste a jamais
 
         if (entity instanceof Player player && !player.getItemBySlot(EquipmentSlot.FEET).equals(stack)) {
             player.getAttribute(Attributes.STEP_HEIGHT)
                     .setBaseValue(0.6);
+                    playersWithBoots.remove(player.getUUID());
+
         }
+    }
+    public static boolean hasBootsShield(UUID uuid) {
+        return playersWithBoots.contains(uuid);
     }
 }
 

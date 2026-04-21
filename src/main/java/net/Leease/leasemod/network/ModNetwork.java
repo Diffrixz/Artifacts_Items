@@ -18,5 +18,10 @@ public class ModNetwork {
                 SummonPacket.CODEC,
                 SummonPacket::handle
         );
+        registrar.playToServer(
+                BookUsePacket.TYPE,
+                BookUsePacket.CODEC,
+                BookUsePacket::handle
+        );
     }
 }
