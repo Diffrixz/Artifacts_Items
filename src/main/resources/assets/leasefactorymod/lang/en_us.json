@@ -1,12 +1,15 @@
 {
   "item.leasefactorymod.scythe": "Scythe",
   "effect.leasefactorymod.bleeding": "Bleeding",
-  "item.leasefactorymod.zephyr": "Zephyr",
   "item.leasefactorymod.sayaka_katana": "Sayaka's Katana",
   "item.leasefactorymod.crown": "Connecteur des Dix Ombres",
   "key.leasefactorymod.summon": "Chatelet",
   "key.categories.leasefactorymod": "Leease Factory Mods",
   "item.leasefactorymod.book_of_the_world": "Book of the World",
   "key.leasefactorymod.book": "Livre Du Monde",
-  "key.leasefactorymod.zephyr": "L'Infini"
+  "item.leasefactorymod.zephyr": "Zephyr",
+  "key.leasefactorymod.zephyr": "L'Infini",
+  "item.leasefactorymod.pink_crimson": "Pink Crimson",
+  "key.leasefactorymod.kc": "Comfortably Numb",
+  "key.leasefactorymod.todo": "Boogie Woogie"
 }

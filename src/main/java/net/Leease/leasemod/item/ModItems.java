@@ -28,6 +28,10 @@ public class ModItems {
     public static final DeferredItem<ElementalBookItem> ELEMENTAL_BOOK = ITEMS.register("book_of_the_world",
             ElementalBookItem::new);
 
+    // Pink Crimson mon item a moi mine Lease D ace
+    public static final DeferredItem<PinkCrimsonItem> PINK_CRIMSON = ITEMS.register("pink_crimson",
+            PinkCrimsonItem::new);
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

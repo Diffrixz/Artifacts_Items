@@ -7,5 +7,23 @@
         "pitch": 1.0
       }
     ]
+  },
+  "item.kc_teleport": {
+    "sounds": [
+      {
+        "name": "leasefactorymod:item/king_crimson",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "item.todo_clap": {
+    "sounds": [
+      {
+        "name": "leasefactorymod:item/clap",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
   }
 }

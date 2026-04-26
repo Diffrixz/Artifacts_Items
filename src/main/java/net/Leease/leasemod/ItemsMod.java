@@ -67,6 +67,18 @@ public class ItemsMod {
                                 ResourceLocation.fromNamespaceAndPath(ItemsMod.MOD_ID, "item.bloodward_slash")
                         ));
 
+        public static final DeferredHolder<SoundEvent, SoundEvent> KC_TELEPORT =
+                SOUND_EVENTS.register("item.kc_teleport",
+                        () -> SoundEvent.createVariableRangeEvent(
+                                ResourceLocation.fromNamespaceAndPath(ItemsMod.MOD_ID, "item.king_crimson")
+                        ));
+
+        public static final DeferredHolder<SoundEvent, SoundEvent> TODO_CLAP =
+                SOUND_EVENTS.register("item.todo_clap",
+                        () -> SoundEvent.createVariableRangeEvent(
+                                ResourceLocation.fromNamespaceAndPath(ItemsMod.MOD_ID, "item.clap")
+                        ));
+
         public static void register(IEventBus eventBus) {
             SOUND_EVENTS.register(eventBus);
         }
