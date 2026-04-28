@@ -47,6 +47,7 @@ public class ClientEvents {
         event.register(ZEPHYR_KEY);
         event.register(KC_KEY);
         event.register(TODO_KEY);
+        event.register(MONADO_KEY);
     }
     public static final KeyMapping ZEPHYR_KEY = new KeyMapping(
             "key.leasefactorymod.zephyr",
@@ -61,6 +62,12 @@ public class ClientEvents {
 
     public static final KeyMapping TODO_KEY = new KeyMapping(
             "key.leasefactorymod.todo",
+            org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,
+            "key.categories.leasefactorymod"
+    );
+
+    public static final KeyMapping MONADO_KEY = new KeyMapping(
+            "key.leasefactorymod.monado",
             org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,
             "key.categories.leasefactorymod"
     );

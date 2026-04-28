@@ -17,7 +17,7 @@ public class KingCrimsonRenderHandler {
     public static void onRenderPlayer(RenderPlayerEvent.Pre event) {
         Player player = event.getEntity();
 
-        // si le joueur a l'effet invisibilite KC on annule tout le rendu
+        // si le joueur a l'effet invisibilite KC j'ai decide d'annule tout le rendu prcq jsp ça marche pas
 
         if (player.hasEffect(MobEffects.INVISIBILITY)) {
 

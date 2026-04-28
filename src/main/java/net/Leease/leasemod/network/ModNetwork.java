@@ -50,6 +50,11 @@ public class ModNetwork {
                 TodoBindPacket.CODEC,
                 TodoBindPacket::handle
         );
+        registrar.playToServer(
+                MonadoUsePacket.TYPE,
+                MonadoUsePacket.CODEC,
+                MonadoUsePacket::handle
+        );
         //suite ?
     }
 }

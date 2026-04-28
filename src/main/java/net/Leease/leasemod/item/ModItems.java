@@ -32,6 +32,11 @@ public class ModItems {
     public static final DeferredItem<PinkCrimsonItem> PINK_CRIMSON = ITEMS.register("pink_crimson",
             PinkCrimsonItem::new);
 
+    //monado de saïshim
+    // Monado de fafa
+    public static final DeferredItem<MonadoItem> MONADO = ITEMS.register("monado",
+            MonadoItem::new);
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

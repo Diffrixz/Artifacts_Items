@@ -25,7 +25,7 @@ public record ZephyrShieldPacket() implements CustomPacketPayload {
     public static void handle(ZephyrShieldPacket packet, IPayloadContext context) {
         context.enqueueWork(() -> {
             if (context.player() instanceof ServerPlayer serverPlayer) {
-                // active l'infini pendant 4min30 = 5400 ticks
+                // active le bouclier dure et cooldown gere dans zephyrbootsitem
                 ZephyrBootsItem.activateShield(serverPlayer.getUUID(),
                         serverPlayer.level().getGameTime());
             }

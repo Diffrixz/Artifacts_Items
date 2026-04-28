@@ -22,7 +22,8 @@ public record SummonPacket() implements CustomPacketPayload {
         return TYPE;
     }
 
-    // c gerer côté serveur
+    // c pour gerer côté serveur
+
     public static void handle(SummonPacket packet, IPayloadContext context) {
         context.enqueueWork(() -> {
             if (context.player() instanceof ServerPlayer serverPlayer) {

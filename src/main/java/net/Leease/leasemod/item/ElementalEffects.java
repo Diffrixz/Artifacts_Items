@@ -79,8 +79,7 @@ public class ElementalEffects {
 
     // Pose le cooldown du feu quand le joueur relâche
     public static void applyFireCooldown(ServerPlayer player) {
-        net.Leease.leasemod.client.BookCooldownHud.setLastUsed(
-                net.Leease.leasemod.client.ElementWheel.Element.FIRE);
+        BookCooldownHud.setLastUsed(ElementWheel.Element.FIRE);
         setCooldown(player, 24000L);
         player.getCooldowns().addCooldown(ModItems.ELEMENTAL_BOOK.get(), 24000);
     }
@@ -109,11 +108,11 @@ public class ElementalEffects {
                 MobEffects.DAMAGE_RESISTANCE, 140, 3, false, true, true));
         player.addEffect(new MobEffectInstance(
                 MobEffects.MOVEMENT_SLOWDOWN, 140, 3, false, true, true));
-        net.Leease.leasemod.client.BookCooldownHud.setLastUsed(
-                net.Leease.leasemod.client.ElementWheel.Element.EARTH);
+        BookCooldownHud.setLastUsed(ElementWheel.Element.EARTH);
         setCooldown(player, 48000L);
-        net.Leease.leasemod.client.BookCooldownHud.setLastUsed(net.Leease.leasemod.client.ElementWheel.Element.EARTH);
+        player.getCooldowns().addCooldown(ModItems.ELEMENTAL_BOOK.get(), 48000);
     }
+
     public static void applyAir(ServerPlayer player) {
         if (isOnCooldown(player)) return;
 
@@ -137,7 +136,7 @@ public class ElementalEffects {
             level.addFreshEntity(windCharge);
         }
 
-        // Propulse les entités autour
+        //propulse les entités autour
         AABB area = new AABB(
                 player.getX() - 8, player.getY() - 8, player.getZ() - 8,
                 player.getX() + 8, player.getY() + 8, player.getZ() + 8);
@@ -150,7 +149,9 @@ public class ElementalEffects {
             Vec3 dir = entity.position().subtract(player.position()).normalize();
             entity.setDeltaMovement(dir.x * 4.0, 1.2, dir.z * 4.0);
             entity.hurtMarked = true;
+
             // Force la synchronisation du mouvement vers les clients
+
             ((net.minecraft.server.level.ServerLevel)level).sendParticles(
                     net.minecraft.core.particles.ParticleTypes.POOF,
                     entity.getX(), entity.getY(), entity.getZ(),
@@ -159,11 +160,18 @@ public class ElementalEffects {
 
         net.Leease.leasemod.client.BookCooldownHud.setLastUsed(
                 net.Leease.leasemod.client.ElementWheel.Element.AIR);
+
+        //cooldown
+
+        BookCooldownHud.setLastUsed(ElementWheel.Element.AIR);
         setCooldown(player, 12000L);
-        net.Leease.leasemod.client.BookCooldownHud.setLastUsed(net.Leease.leasemod.client.ElementWheel.Element.AIR);
+        player.getCooldowns().addCooldown(ModItems.ELEMENTAL_BOOK.get(), 12000);
     }
+
     public static void applyFire(ServerPlayer player) {
-        // Gardée pour le switch de BookUsePacket — jamais appelée en pratique
+
+        // garde pour le switch de BookUsePacket jamais appelée en pratique
+
         if (isOnCooldown(player)) return;
         applyFireTick(player);
         applyFireCooldown(player);
